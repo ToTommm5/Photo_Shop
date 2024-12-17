@@ -1,0 +1,58 @@
+<app-title title="Panier"></app-title>
+<!--Si le panier est vide -->
+<div *ngIf="panier.totalCount === 0" class="empty-panier">
+  <p>Votre panier est vide</p>
+  <button (click)="goToHome()">Retourner à l'accueil</button>
+</div>
+
+<div *ngIf="panier.totalCount > 0" class="container">
+  <ul>
+    <li *ngFor="let panierItem of panier.items">
+      <div>
+        <img [src]="panierItem.photo.imgUrl" alt="" />
+      </div>
+      <div>
+        Quantité
+        <select
+          #quantitySelect
+          [value]="panierItem.quantity"
+          (change)="changeQuantity(panierItem, quantitySelect.value)"
+        >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div>
+        Taille
+        <select
+          #sizeSelect
+          [value]="panierItem.size"
+          (change)="changeSize(panierItem, sizeSelect.value)"
+        >
+          <option>4*5</option>
+          <option>5*6</option>
+        </select>
+      </div>
+      <div>Prix {{ panierItem.price * panierItem.quantity | currency }}</div>
+      <div>
+        <button class="remove-button" (click)="removeFromPanier(panierItem)">
+          Remove
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div>
+      <div class="photo-count">
+        nombre d'articles total : {{ panier.totalCount }}
+      </div>
+      <div class="totalPrice">
+        Prix total de la commande : {{ panier.totalPrice | currency }}
+      </div>
+    </div>
+    <button>Passer la commande</button>
+  </div>
+</div>

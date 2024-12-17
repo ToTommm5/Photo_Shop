@@ -1,0 +1,93 @@
+/* Centrer le conteneur principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  /* Conteneur de détails de connexion */
+  .details {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre */
+  .details app-title {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style des labels */
+  .input-container label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  /* Conteneur de chaque champ d'entrée */
+  .input-container {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Style des champs d'entrée */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Bouton de soumission */
+  .button button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet hover sur le bouton */
+  .button button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Messages d'erreur */
+  .error-list {
+    color: #d9534f;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Animation d'apparition pour les messages d'erreur */
+  .error-list div {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Animation pour le fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

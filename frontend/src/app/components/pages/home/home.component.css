@@ -1,0 +1,209 @@
+/* Global reset */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 15px;
+  display: inline-block;
+  width: 200px; /* Adjust width as per your needs */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover img {
+  transform: scale(1.1);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content {
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.id {
+  font-size: 14px;
+  color: #555;
+}
+
+.favorite {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+.favorite.not {
+  color: #ccc; /* Grey color for non-favorite items */
+}
+
+.favorite:hover {
+  color: darkred; /* Darker red on hover */
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw; /* 100% de la largeur de la fenêtre */
+  height: 100vh; /* 100% de la hauteur de la fenêtre */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  width: 60vw; /* Largeur de 90% de la fenêtre visible */
+  height: 90vh; /* Hauteur de 90% de la fenêtre visible */
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 100%; /* L'image prend toute la place disponible */
+  object-fit: contain; /* Conserve le ratio de l'image tout en l'agrandissant */
+}
+
+.modal-id {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Style for "Add to Panier" button at the bottom of the modal */
+.modal .add-to-panier-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Full width in modal */
+  background-color: #ff6347;
+  color: white;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.modal .add-to-panier-button:hover {
+  background-color: #ff4500; /* Darker color on hover */
+}
+
+.modal-content {
+  position: relative; /* Needed to position the button at the bottom */
+  padding-bottom: 60px; /* Space for the button */
+}
+
+/* Container for the navigation buttons */
+.navigation-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%); /* Center vertically */
+  pointer-events: none; /* Allow click through the container */
+}
+
+/* Style for individual buttons */
+.navigation-buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  pointer-events: all; /* Make buttons clickable */
+}
+
+.navigation-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Left button */
+.navigation-buttons button:first-child {
+  position: absolute;
+  left: 10px;
+  
+}
+
+/* Right button */
+.navigation-buttons button:last-child {
+  position: absolute;
+  right: 10px;
+}
+
+.validation-message {
+  position: fixed;
+  bottom: 20px; /* Distance du bas de l'écran */
+  left: 50%;
+  transform: translateX(-50%); /* Centre horizontalement */
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
+  width: fit-content;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de surélévation */
+}
+
+/* Si vous souhaitez également centrer verticalement, utilisez ce style en plus */
+.validation-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none; /* Désactive les interactions sur le conteneur */
+}

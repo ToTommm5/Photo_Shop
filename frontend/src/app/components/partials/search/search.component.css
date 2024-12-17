@@ -1,0 +1,45 @@
+/* Container div */
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Search input */
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #555; /* Dark border for consistency */
+    background-color: #333; /* Dark background like the header */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #aaa; /* Light grey placeholder text */
+}
+
+input[type="text"]:focus {
+    border-color: #ff6347; /* Tomato color on focus (consistent with cart span) */
+}
+
+/* Search button */
+button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff6347; /* Tomato background to match cart count */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4500; /* Darker tomato color on hover */
+}

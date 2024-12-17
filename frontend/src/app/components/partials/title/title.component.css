@@ -1,0 +1,10 @@
+/* Style pour le composant h1 */
+h1 {
+    color: #333; /* Couleur par défaut */
+    font-weight: bold; /* Style de police gras */
+    text-align: center; /* Centrage du texte */
+    transition: all 0.3s ease; /* Transition pour un effet fluide lors du changement de styles */
+}
+
+
+
