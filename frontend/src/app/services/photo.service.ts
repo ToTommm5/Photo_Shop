@@ -9,7 +9,7 @@ import { PHOTO_BY_SEARCH_URL, PHOTO_URL } from '../shared/constants/urls';
   providedIn: 'root',
 })
 export class PhotoService {
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Photo[]> {
     return this.http.get<Photo[]>(PHOTO_URL);
