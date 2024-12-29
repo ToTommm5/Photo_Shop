@@ -4,7 +4,7 @@ export const sample_photos: any[] = [
     name: "photo 1",
     size: "4*5",
     favorite: false,
-    imgUrl: "photo1.jpg",
+    imgUrl: "/photos/photo4.jpg",
     price: 1,
   },
   {
@@ -12,7 +12,7 @@ export const sample_photos: any[] = [
     name: "photo 2",
     size: "4*5",
     favorite: false,
-    imgUrl: "photo 2.jpg",
+    imgUrl: "/photos/photo2.jpg",
     price: 2,
   },
   {
@@ -20,7 +20,7 @@ export const sample_photos: any[] = [
     name: "photo 3",
     size: "4*5",
     favorite: false,
-    imgUrl: "photo 3.jpg",
+    imgUrl: "/photos/photo3.jpg",
     price: 3,
   },
 ];

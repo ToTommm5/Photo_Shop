@@ -1,19 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Photo } from '../../../shared/models/Photo';
-import { PhotoService } from '../../../services/photo.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { SearchComponent } from '../../partials/search/search.component';
-import { Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { DOCUMENT } from '@angular/common';
-import { PanierService } from '../../../services/panier.service';
-import { log } from 'console';
-import { NotFoundComponent } from "../../partials/not-found/not-found.component";
 import { Observable } from 'rxjs';
-
-
-
+import { PanierService } from '../../../services/panier.service';
+import { PhotoService } from '../../../services/photo.service';
+import { Photo } from '../../../shared/models/Photo';
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
+import { SearchComponent } from '../../partials/search/search.component';
 
 @Component({
   selector: 'app-home',
@@ -27,8 +20,6 @@ export class HomeComponent implements OnInit {
   selectedPhoto: Photo | null = null;
   isBrowser: boolean;
   isMessageVisible: boolean = false;
-
-
 
   constructor(
     private photoService: PhotoService,
@@ -49,10 +40,9 @@ export class HomeComponent implements OnInit {
         );
       else photosObservable = this.photoService.getAll();
 
-      photosObservable.subscribe((serverPhotos)=>
-      {
+      photosObservable.subscribe((serverPhotos) => {
         this.photos = serverPhotos;
-      })
+      });
     });
   }
 
@@ -95,13 +85,11 @@ export class HomeComponent implements OnInit {
     event.stopPropagation();
 
     if (this.selectedPhoto) {
-      this.panierService.addToPanier(this.selectedPhoto)
+      this.panierService.addToPanier(this.selectedPhoto);
       this.isMessageVisible = true;
-    setTimeout(() => {this.isMessageVisible = false;}, 5000);
+      setTimeout(() => {
+        this.isMessageVisible = false;
+      }, 5000);
     }
   }
-  
-  
-
-  
 }
