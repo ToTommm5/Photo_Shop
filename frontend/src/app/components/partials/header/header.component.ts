@@ -31,7 +31,11 @@ export class HeaderComponent implements OnInit {
     this.userService.logout();
   }
 
-  get isAuth(){
+  get isAuth() {
     return this.user.token;
+  }
+
+  get isAdmin() {
+    return this.user.isAdmin;
   }
 }

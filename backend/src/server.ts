@@ -21,11 +21,10 @@ app.use(
 app.use("/api/photos", photoRouter);
 app.use("/api/users", userRouter);
 
-const publicDir = path.resolve(__dirname, "../public/photos");
-app.use("/photos", express.static(publicDir));
+const photosDir = path.resolve(__dirname, "../public/photos");
+app.use("/photos", express.static(photosDir));
 
 const port = 5001;
 app.listen(port, () => {
-  console.log(publicDir);
   console.log("Le site est connecté à http://localhost:" + port);
 });
