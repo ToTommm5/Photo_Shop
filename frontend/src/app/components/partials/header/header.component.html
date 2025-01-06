@@ -14,6 +14,9 @@
             <a (click)="logout()">Logout</a>
           </div>
         </li>
+        <li *ngIf="isAdmin">
+          <a routerLink="/upload"> Upload</a>
+        </li>
         <li>
           <a routerLink="/cart-page">
             Panier <span>{{ panierQuantity }}</span>

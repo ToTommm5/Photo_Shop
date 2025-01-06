@@ -1,9 +1,11 @@
 import { Router } from "express";
 import asynceHandler from "express-async-handler";
 import jwt from "jsonwebtoken";
-import { sample_users } from "../data";
+import data from "../data.json";
 import { UserModel } from "../Models/user.model";
 const router = Router();
+
+const sample_users = data.users;
 
 router.get(
   "/seed",

@@ -3,12 +3,13 @@ import asynceHandler from "express-async-handler";
 import fs from "fs";
 import multer from "multer";
 import path from "path";
-import { sample_photos } from "../data";
 import { PhotoModel } from "../Models/photo.model";
+import data from "../data.json";
 
 const router = Router();
 const photosDir = path.join(__dirname, "../../public/photos");
 const dataPath = "/Users/tom/Desktop/VSCode/Photo_Shop/backend/src/data.json";
+const photos = data.photos;
 
 router.get(
   "/seed",
@@ -18,24 +19,23 @@ router.get(
       res.send("Seed is already done !");
       return;
     }
-    await PhotoModel.create(sample_photos);
+    await PhotoModel.create(photos);
     res.send("Seed is done ! ");
   })
 );
 
 // Charger les données de data.ts
 router.get("/", (req, res) => {
-  const photos = sample_photos;
   res.send(photos);
 });
 
 // charger les photos recherchées dans la barre de recherche
 router.get("/search/:searchTerm", (req, res) => {
   const searchTerm = req.params.searchTerm;
-  const photos = sample_photos.filter((photo) =>
+  const photosfilter = photos.filter((photo) =>
     photo.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  res.send(photos);
+  res.send(photosfilter);
 });
 
 //configuration de multer pour upload les photos
