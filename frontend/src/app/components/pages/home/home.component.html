@@ -16,17 +16,14 @@
 <div *ngIf="selectedPhoto" class="modal" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <span class="close" (click)="closeModal()">&times;</span>
-
     <!-- Image -->
     <img
       [src]="'http://localhost:5001' + selectedPhoto.imgUrl"
       alt="Selected Photo"
     />
-
     <!-- Previous and Next buttons -->
     <div class="navigation-buttons">
       <button (click)="previousPhoto($event)">&#10094; Précédent</button>
-
       <button (click)="nextPhoto($event)">Suivant &#10095;</button>
     </div>
     <button class="add-to-panier-button" (click)="addToPanier($event)">
@@ -34,6 +31,7 @@
     </button>
   </div>
 </div>
+
 <div *ngIf="isMessageVisible" class="validation-message-container">
   <div class="validation-message">
     L'article a été ajouté au panier avec succès !

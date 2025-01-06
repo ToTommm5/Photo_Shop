@@ -1,29 +1,4 @@
-export const sample_photos: any[] = [
-  {
-    id: "1",
-    name: "photo 1",
-    size: "4*5",
-    favorite: false,
-    imgUrl: "/photos/photo4.jpg",
-    price: 1,
-  },
-  {
-    id: "2",
-    name: "photo 2",
-    size: "4*5",
-    favorite: false,
-    imgUrl: "/photos/photo2.jpg",
-    price: 2,
-  },
-  {
-    id: "3",
-    name: "photo 3",
-    size: "4*5",
-    favorite: false,
-    imgUrl: "/photos/photo3.jpg",
-    price: 3,
-  },
-];
+import photos from "./data.json";
 
 export const sample_users: any[] = [
   {
@@ -41,3 +16,16 @@ export const sample_users: any[] = [
     isAdmin: false,
   },
 ];
+
+export const sample_photos = [
+  {
+    id: 1,
+    name: "Photo 1",
+    imgUrl: "/photos/photo1.jpg",
+    size: "4*5",
+    favorite: false,
+    price: 8,
+  },
+];
+
+export default photos;

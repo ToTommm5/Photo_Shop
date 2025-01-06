@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "photo 1",
+    "size": "4*5",
+    "favorite": false,
+    "imgUrl": "/photos/photo4.jpg",
+    "price": 1
+  },
+  {
+    "id": "2",
+    "name": "photo 2",
+    "size": "4*5",
+    "favorite": false,
+    "imgUrl": "/photos/photo2.jpg",
+    "price": 2
+  },
+  {
+    "id": "3",
+    "name": "photo 3",
+    "size": "4*5",
+    "favorite": false,
+    "imgUrl": "/photos/photo3.jpg",
+    "price": 3
+  },
+  {
+    "id": 1735602498054,
+    "name": "NoName Photo",
+    "size": "4*5",
+    "favorite": false,
+    "imgUrl": "/photos/Japan.jpg",
+    "price": 8
+  },
+  {
+    "id": 1735602526280,
+    "name": "NoName Photo",
+    "size": "4*5",
+    "favorite": false,
+    "imgUrl": "/photos/pokmon-versi-4e2624d5781fb.jpg",
+    "price": 8
+  }
+]
