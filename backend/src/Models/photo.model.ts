@@ -7,6 +7,7 @@ export interface Photo {
   size: string;
   favorite: boolean;
   imgUrl: string;
+  epreuve: string;
 }
 
 export const PhotoSchema = new Schema<Photo>(
@@ -16,6 +17,7 @@ export const PhotoSchema = new Schema<Photo>(
     size: { type: String, required: true },
     favorite: { type: Boolean, default: false },
     imgUrl: { type: String, required: true },
+    epreuve: { type: String, required: true },
   },
   {
     toJSON: {
@@ -28,5 +30,4 @@ export const PhotoSchema = new Schema<Photo>(
   }
 );
 
-
-export const PhotoModel = model<Photo>('photo', PhotoSchema)
+export const PhotoModel = model<Photo>("photo", PhotoSchema);

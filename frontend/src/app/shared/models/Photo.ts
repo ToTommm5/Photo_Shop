@@ -1,10 +1,9 @@
-export class Photo{
-    id!:string;
-    name!:string;
-    price!:number;
-    size!:string;
-    favorite!:boolean;
-    imgUrl!:string;
-
-
+export class Photo {
+  id!: string;
+  name!: string;
+  price!: number;
+  size!: string;
+  favorite!: boolean;
+  imgUrl!: string;
+  epreuve!: string;
 }
