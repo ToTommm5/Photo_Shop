@@ -9,7 +9,7 @@
   <ul>
     <li *ngFor="let panierItem of panier.items">
       <div>
-        <img [src]="panierItem.photo.imgUrl" alt="" />
+        <img [src]="'http://localhost:5001' + panierItem.photo.imgUrl" alt="" />
       </div>
       <div>
         Quantité

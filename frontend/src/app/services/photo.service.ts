@@ -1,9 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Photo } from '../shared/models/Photo';
-import { sample_photos } from '../../data';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PHOTO_BY_SEARCH_URL, PHOTO_URL } from '../shared/constants/urls';
+import { Photo } from '../shared/models/Photo';
 
 @Injectable({
   providedIn: 'root',

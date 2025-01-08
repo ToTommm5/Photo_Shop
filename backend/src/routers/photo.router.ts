@@ -56,9 +56,6 @@ router.post(
   "/upload",
   upload.single("photo"),
   (req: Request, res: Response): void => {
-    console.log(photosDir);
-    console.log(dataPath);
-
     if (!req.file) {
       res.status(400).send("Pas de fichier téléchargé !");
       return;
@@ -79,11 +76,25 @@ router.post(
         return;
       }
 
-      let photos = JSON.parse(data); // Parse les données JSON
-      photos.push(newPhoto); // Ajout de la photo au tableau.
+      let parsedData;
+      try {
+        parsedData = JSON.parse(data);
+      } catch (error) {
+        res.status(500).send("erreur lors du parsing");
+        return;
+      }
+
+      if (!Array.isArray(parsedData.photos)) {
+        res
+          .status(500)
+          .send("Données JSON invalides : 'photos' n'est pas un tableau");
+        return;
+      }
+
+      parsedData.photos.push(newPhoto);
 
       // Ecrire les données dans data.ts
-      const updatedData = JSON.stringify(photos, null, 2);
+      const updatedData = JSON.stringify(parsedData, null, 2);
       fs.writeFile(dataPath, updatedData, (err) => {
         if (err) {
           res.status(500).send("Erreur lors de l'écriture du fichier ! ");
@@ -92,7 +103,7 @@ router.post(
 
         res
           .status(200)
-          .send("Photo téléchargée et données ajoutées avec succès !");
+          .json("Photo téléchargée et données ajoutées avec succès !");
       });
     });
   }
