@@ -6,7 +6,8 @@
       "size": "4*5",
       "favorite": false,
       "imgUrl": "/photos/468547677_10162209055249732_6687285236072951572_n.jpg",
-      "price": 8
+      "price": 8,
+      "epreuve": "Conteville"
     },
     {
       "id": 1736350558573,
@@ -14,7 +15,8 @@
       "size": "4*5",
       "favorite": false,
       "imgUrl": "/photos/464702658_27407845995526597_6089822130678859834_n.jpg",
-      "price": 8
+      "price": 8,
+      "epreuve": "Conteville"
     },
     {
       "id": 1736350675487,
@@ -22,7 +24,8 @@
       "size": "4*5",
       "favorite": false,
       "imgUrl": "/photos/37764512_2256750444544803_2803387091822575616_n.jpg",
-      "price": 8
+      "price": 8,
+      "epreuve": "Lille"
     },
     {
       "id": 1736350682611,
@@ -30,7 +33,8 @@
       "size": "4*5",
       "favorite": false,
       "imgUrl": "/photos/53008533_2417568838462962_6103804416366739456_n.jpg",
-      "price": 8
+      "price": 8,
+      "epreuve": "Lille"
     },
     {
       "id": 1736350691163,
@@ -38,7 +42,8 @@
       "size": "4*5",
       "favorite": false,
       "imgUrl": "/photos/212394027_4319795291397862_7174576726347616994_n.jpg",
-      "price": 8
+      "price": 8,
+      "epreuve": "Paris"
     }
   ],
   "users": [

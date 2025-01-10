@@ -4,36 +4,14 @@
   resetLinkMessage="Réinitialisez votre recherche !  "
 ></app-not-found>
 
-<ul>
-  <li *ngFor="let photo of photos">
-    <a (click)="openModal(photo)">
-      <img [src]="'http://localhost:5001' + photo.imgUrl" />
-    </a>
-  </li>
-</ul>
+<div class="epreuve-container">
+  <div
+    class="epreuve-folder"
+    *ngFor="let epreuve of epreuves"
+    (click)="viewContestPhoto(epreuve)"
+  >
+    <img src="folder-icon.png" alt="Folder Icon" />
 
-<!-- Modal -->
-<div *ngIf="selectedPhoto" class="modal" (click)="closeModal()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <!-- Image -->
-    <img
-      [src]="'http://localhost:5001' + selectedPhoto.imgUrl"
-      alt="Selected Photo"
-    />
-    <!-- Previous and Next buttons -->
-    <div class="navigation-buttons">
-      <button (click)="previousPhoto($event)">&#10094; Précédent</button>
-      <button (click)="nextPhoto($event)">Suivant &#10095;</button>
-    </div>
-    <button class="add-to-panier-button" (click)="addToPanier($event)">
-      Add to Panier
-    </button>
-  </div>
-</div>
-
-<div *ngIf="isMessageVisible" class="validation-message-container">
-  <div class="validation-message">
-    L'article a été ajouté au panier avec succès !
+    <p>{{ epreuve }}</p>
   </div>
 </div>
