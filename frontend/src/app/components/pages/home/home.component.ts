@@ -39,7 +39,9 @@ export class HomeComponent implements OnInit {
   }
 
   viewContestPhoto(epreuve: string) {
-    this.router.navigate(['/epreuve', epreuve]);
-    console.log('ok je vais afficher le concours ' + epreuve + ' !!');
+    if (epreuve != null) {
+      this.router.navigate(['/epreuve', epreuve]);
+      console.log('ok je vais afficher le concours ' + epreuve + ' !!');
+    } else console.log("Pas d'épreuve sélectionnée !");
   }
 }

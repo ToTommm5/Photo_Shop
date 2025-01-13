@@ -62,12 +62,14 @@ router.post(
     }
 
     const newPhoto = {
+      // ici on récupère les inputs du formulaires envoyé depuis la upload-page.ts
       id: Date.now(),
       name: req.body.name || "NoName Photo",
       size: "4*5",
       favorite: false,
       imgUrl: "/photos/" + req.file.filename,
       price: 8,
+      epreuve: req.body.epreuve,
     };
     //lecture du fichier data
     fs.readFile(dataPath, "utf8", (err, data) => {
