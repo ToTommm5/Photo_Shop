@@ -1,0 +1,270 @@
+/* Global Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 2px solid #ddd;
+}
+.back-button {
+  background-color: white;
+  color: white; /* Couleur du texte */
+  font-size: 40px; /* Taille de la police */
+  margin: 10px;
+  padding: 10px 20px; /* Espacement intérieur */
+  border: solid #333; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur au survol */
+  letter-spacing: 1px; /* Espacement entre les lettres */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animation douce */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+  transform: translateY(-2px); /* Légère élévation */
+}
+
+.back-button:active {
+  transform: translateY(0); /* Réinitialisation lors du clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+}
+
+/* Heading Style */
+h2 {
+  position: absolute;
+  left: 40%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: 1.5px;
+
+  padding-bottom: 10px;
+}
+
+/* Photo List */
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+li {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+a:hover img {
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  width: 80%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: contain; /* Conserve la proportionnalité sans déformation */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #d9534f;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  object-fit: contain; /* Conserve la proportionnalité */
+}
+
+/* Buttons */
+.add-to-panier-button {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 18px; /* Augmentation de la taille du texte */
+  padding: 15px 30px; /* Augmentation de la taille globale du bouton */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-panier-button:hover {
+  background-color: #218838;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; /* Boutons prennent toute la hauteur de l'image */
+  pointer-events: none;
+}
+
+.navigation-buttons button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  pointer-events: all; /* Permet aux boutons d'être cliquables */
+  border-radius: 5px;
+  margin: 10px; /* Espace entre les boutons et l'image */
+  height: auto; /* Ajuste à la taille du contenu */
+  transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+/* Validation Message */
+.validation-message-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+  animation: fadeInOut 4s forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInOut {
+  0%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Epreuve Folder Style */
+.epreuve-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.epreuve-folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 200px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.epreuve-folder:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.epreuve-folder img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.epreuve-folder p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  margin: 0;
+}

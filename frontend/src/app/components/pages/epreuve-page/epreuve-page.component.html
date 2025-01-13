@@ -1,0 +1,44 @@
+<div class="top">
+  <button class="back-button" onclick="history.back()">🔙</button>
+  <h2>Concours : {{ epreuve }}</h2>
+</div>
+
+<ul>
+  <li *ngFor="let photo of filteredPhoto">
+    <a (click)="openModal(photo)">
+      <img [src]="'http://localhost:5001' + photo.imgUrl" />
+    </a>
+  </li>
+</ul>
+
+<!-- Modal -->
+<div *ngIf="selectedPhoto" class="modal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close" (click)="closeModal()">&times;</span>
+
+    <!-- Container for image and navigation buttons -->
+    <div class="image-container">
+      <!-- Image -->
+      <img
+        [src]="'http://localhost:5001' + selectedPhoto.imgUrl"
+        alt="Selected Photo"
+      />
+      <!-- Previous and Next buttons -->
+      <div class="navigation-buttons">
+        <button (click)="previousPhoto($event)">&#10094; Précédent</button>
+        <button (click)="nextPhoto($event)">Suivant &#10095;</button>
+      </div>
+    </div>
+
+    <!-- Add to Panier button -->
+    <button class="add-to-panier-button" (click)="addToPanier($event)">
+      Add to Panier
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isMessageVisible" class="validation-message-container">
+  <div class="validation-message">
+    L'article a été ajouté au panier avec succès !
+  </div>
+</div>
