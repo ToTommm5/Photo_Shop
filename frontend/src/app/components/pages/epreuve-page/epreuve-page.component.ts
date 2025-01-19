@@ -37,7 +37,7 @@ export class EpreuvePageComponent implements OnInit {
 
       if (this.epreuve) {
         this.filteredPhoto = this.photos.filter((photo) => {
-          return photo.epreuve === this.epreuve;
+          //return photo.epreuveid === this.epreuves.id;
         });
       }
     });

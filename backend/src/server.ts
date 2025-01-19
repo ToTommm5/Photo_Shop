@@ -24,7 +24,14 @@ app.use("/api/users", userRouter);
 const photosDir = path.resolve(__dirname, "../public/photos");
 app.use("/photos", express.static(photosDir));
 
+const logosDir = path.resolve(__dirname, "../public/logo_epreuve");
+app.use("/logo", express.static(logosDir));
+
 const port = 5001;
 app.listen(port, () => {
   console.log("Le site est connecté à http://localhost:" + port);
+});
+
+app.get("/api/data", (req, res) => {
+  res.sendFile(path.join(__dirname, "data.json"));
 });

@@ -16,7 +16,7 @@ import { SearchComponent } from '../../partials/search/search.component';
 export class HomeComponent implements OnInit {
   photos: Photo[] = [];
   isBrowser: boolean;
-  epreuves: string[] = [];
+  epreuves: any[] = [];
 
   constructor(
     private photoService: PhotoService,
@@ -30,12 +30,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.photoService.getAll().subscribe((serverPhotos) => {
       this.photos = serverPhotos;
-      this.epreuves = this.getUniqueContests(this.photos);
     });
-  }
-
-  getUniqueContests(photos: any[]): string[] {
-    return [...new Set(photos.map((photo) => photo.epreuve))];
+    this.photoService.getEpreuve().subscribe((epreuves) => {
+      this.epreuves = epreuves;
+    });
   }
 
   viewContestPhoto(epreuve: string) {

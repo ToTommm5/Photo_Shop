@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { PHOTO_BY_SEARCH_URL, PHOTO_URL } from '../shared/constants/urls';
+import { Observable, map } from 'rxjs';
+import {
+  DATA_URL,
+  PHOTO_BY_SEARCH_URL,
+  PHOTO_URL,
+} from '../shared/constants/urls';
 import { Photo } from '../shared/models/Photo';
 
 @Injectable({
@@ -16,5 +20,8 @@ export class PhotoService {
 
   getAllPhotosBySearchTerm(searchTerm: string) {
     return this.http.get<Photo[]>(PHOTO_BY_SEARCH_URL + searchTerm);
+  }
+  getEpreuve(): Observable<any[]> {
+    return this.http.get<any>(DATA_URL).pipe(map((data) => data.epreuves));
   }
 }

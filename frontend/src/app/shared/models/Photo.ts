@@ -5,5 +5,5 @@ export class Photo {
   size!: string;
   favorite!: boolean;
   imgUrl!: string;
-  epreuve!: string;
+  epreuveid!: number;
 }
