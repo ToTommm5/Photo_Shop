@@ -24,4 +24,26 @@ export class PhotoService {
   getEpreuve(): Observable<any[]> {
     return this.http.get<any>(DATA_URL).pipe(map((data) => data.epreuves));
   }
+
+  getPhotoByEpreuveId(epreuveId: number): Observable<Photo[]> {
+    return this.getAll().pipe(
+      map((photos) => {
+        console.log('Toutes les photos:', photos); // Vérifier toutes les photos récupérées
+        const filteredPhotos = photos.filter(
+          (photo) => photo.epreuveid === epreuveId // Comparaison avec l'ID en chaîne
+        );
+        console.log('Photos filtrées:', filteredPhotos); // Vérifier les photos filtrées
+        return filteredPhotos;
+      })
+    );
+  }
+
+  getEpreuveByName(epreuveName: string): Observable<any[]> {
+    return this.getEpreuve().pipe(
+      map((epreuves) => {
+        console.log('Epreuves récupérées:', epreuves); // Vérification des données reçues
+        return epreuves.filter((epreuve) => epreuve.epreuve === epreuveName);
+      })
+    );
+  }
 }

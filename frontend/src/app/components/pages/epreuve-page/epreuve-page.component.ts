@@ -1,5 +1,5 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PanierService } from '../../../services/panier.service';
 import { PhotoService } from '../../../services/photo.service';
@@ -13,42 +13,49 @@ import { Photo } from '../../../shared/models/Photo';
   styleUrl: './epreuve-page.component.css',
 })
 export class EpreuvePageComponent implements OnInit {
+  epreuveName: string | null = null;
   photos: Photo[] = [];
-  filteredPhoto: Photo[] = [];
-  epreuve: string | null = null;
+  isBrowser: any;
   selectedPhoto: Photo | null = null;
-  isBrowser: boolean;
   isMessageVisible: boolean = false;
-
   constructor(
     private route: ActivatedRoute,
-    private panierService: PanierService,
     private photoService: PhotoService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-  }
+    private panierService: PanierService
+  ) {}
 
   ngOnInit(): void {
-    this.epreuve = this.route.snapshot.paramMap.get('epreuve');
+    // Récupérer le nom de l'épreuve depuis les paramètres de la route
+    this.route.paramMap.subscribe((params) => {
+      this.epreuveName = params.get('epreuve'); // Récupérer le nom de l'épreuve
 
-    this.photoService.getAll().subscribe((photos) => {
-      this.photos = photos;
+      if (this.epreuveName) {
+        // Vérifier que epreuveName n'est pas null
+        // Appeler la méthode du service pour obtenir l'épreuve par son nom
+        this.photoService
+          .getEpreuveByName(this.epreuveName)
+          .subscribe((epreuves) => {
+            if (epreuves.length > 0) {
+              const epreuve = epreuves[0]; // Prendre la première épreuve trouvée (car `getEpreuveByName` retourne un tableau)
 
-      if (this.epreuve) {
-        this.filteredPhoto = this.photos.filter((photo) => {
-          //return photo.epreuveid === this.epreuves.id;
-        });
+              // Maintenant, vous pouvez récupérer les photos liées à cette épreuve
+              this.photoService
+                .getPhotoByEpreuveId(+epreuve.id)
+                .subscribe((photos) => {
+                  this.photos = photos;
+                  console.log(this.photos);
+                });
+            }
+          });
       }
     });
   }
 
   // Method to open the modal
   openModal(photo: Photo) {
-    if (this.isBrowser) {
-      this.selectedPhoto = photo;
-      // Do DOM manipulation if needed, only in browser environment
-    }
+    this.selectedPhoto = photo;
+    console.log('selected photo', this.selectedPhoto);
+    // Do DOM manipulation if needed, only in browser environment
   }
 
   // Method to close the modal
@@ -60,7 +67,7 @@ export class EpreuvePageComponent implements OnInit {
   nextPhoto(event: Event) {
     event.stopPropagation();
     if (this.selectedPhoto) {
-      const sameEpreuvePhotos = this.filteredPhoto;
+      const sameEpreuvePhotos = this.photos;
       const currentIndex = sameEpreuvePhotos.indexOf(this.selectedPhoto);
       const nextIndex = (currentIndex + 1) % sameEpreuvePhotos.length;
       this.selectedPhoto = sameEpreuvePhotos[nextIndex];
@@ -71,7 +78,7 @@ export class EpreuvePageComponent implements OnInit {
   previousPhoto(event: Event) {
     event.stopPropagation();
     if (this.selectedPhoto) {
-      const sameEpreuvePhotos = this.filteredPhoto;
+      const sameEpreuvePhotos = this.photos;
       const currentIndex = sameEpreuvePhotos.indexOf(this.selectedPhoto);
       const prevIndex =
         (currentIndex - 1 + sameEpreuvePhotos.length) %

@@ -1,15 +1,19 @@
-<div class="top">
-  <button class="back-button" onclick="history.back()">🔙</button>
-  <h2>Concours : {{ epreuve }}</h2>
-</div>
+<div class="epreuve-container">
+  <h1>Photos du concours de : {{ epreuveName }}</h1>
 
-<ul>
-  <li *ngFor="let photo of filteredPhoto">
-    <a (click)="openModal(photo)">
-      <img [src]="'http://localhost:5001' + photo.imgUrl" />
-    </a>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let photo of photos" class="photo-card">
+      <a (click)="openModal(photo)">
+        <img [src]="'http://localhost:5001' + photo.imgUrl" />
+      </a>
+    </li>
+  </ul>
+
+  <!-- Si aucune photo n'est trouvée -->
+  <ng-template #noPhotos>
+    <p>Aucune photo trouvée pour cette épreuve.</p>
+  </ng-template>
+</div>
 
 <!-- Modal -->
 <div *ngIf="selectedPhoto" class="modal" (click)="closeModal()">

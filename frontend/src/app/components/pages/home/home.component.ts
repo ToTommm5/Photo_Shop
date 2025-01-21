@@ -28,9 +28,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.photoService.getAll().subscribe((serverPhotos) => {
-      this.photos = serverPhotos;
-    });
     this.photoService.getEpreuve().subscribe((epreuves) => {
       this.epreuves = epreuves;
     });
@@ -39,7 +36,6 @@ export class HomeComponent implements OnInit {
   viewContestPhoto(epreuve: string) {
     if (epreuve != null) {
       this.router.navigate(['/epreuve', epreuve]);
-      console.log('ok je vais afficher le concours ' + epreuve + ' !!');
     } else console.log("Pas d'épreuve sélectionnée !");
   }
 }

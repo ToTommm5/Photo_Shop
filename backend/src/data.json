@@ -7,7 +7,7 @@
       "favorite": false,
       "imgUrl": "/photos/468547677_10162209055249732_6687285236072951572_n.jpg",
       "price": 8,
-      "epreuveid": "1"
+      "epreuveid": 1
     },
     {
       "id": 1736350558573,
@@ -16,7 +16,7 @@
       "favorite": false,
       "imgUrl": "/photos/464702658_27407845995526597_6089822130678859834_n.jpg",
       "price": 8,
-      "epreuveid": "1"
+      "epreuveid": 1
     },
     {
       "id": 1736350675487,
@@ -25,7 +25,7 @@
       "favorite": false,
       "imgUrl": "/photos/37764512_2256750444544803_2803387091822575616_n.jpg",
       "price": 8,
-      "epreuveid": "3"
+      "epreuveid": 3
     },
     {
       "id": 1736350682611,
@@ -34,7 +34,7 @@
       "favorite": false,
       "imgUrl": "/photos/53008533_2417568838462962_6103804416366739456_n.jpg",
       "price": 8,
-      "epreuveid": "3"
+      "epreuveid": 3
     },
     {
       "id": 1736350691163,
@@ -43,16 +43,7 @@
       "favorite": false,
       "imgUrl": "/photos/212394027_4319795291397862_7174576726347616994_n.jpg",
       "price": 8,
-      "epreuveid": "2"
-    },
-    {
-      "id": 1736805699865,
-      "name": "photooo=",
-      "size": "4*5",
-      "favorite": false,
-      "imgUrl": "https://www.photo-paysage.com/albums/userpics/10001/thumb_Reflets-lac_Vallon-montagne-alpes-foret-IMG_1831.jpeg",
-      "price": 8,
-      "epreuveid": "1"
+      "epreuveid": 2
     },
     {
       "id": 1736806214658,
@@ -61,7 +52,7 @@
       "favorite": false,
       "imgUrl": "/photos/Test.jpg",
       "price": 8,
-      "epreuveid": "2"
+      "epreuveid": 2
     }
   ],
   "users": [
@@ -91,12 +82,12 @@
     {
       "id": 2,
       "epreuve": "Paris",
-      "imgUrl": "/EDM_logo.jpg"
+      "imgUrl": "/Paris.png"
     },
     {
       "id": 3,
       "epreuve": "Lille",
-      "imgUrl": "/EDM_logo.jpg"
+      "imgUrl": "/LilleHE.png"
     }
   ]
 }

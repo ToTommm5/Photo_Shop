@@ -1,12 +1,10 @@
 <app-search></app-search>
 <div class="epreuve-container">
   <div *ngFor="let epreuve of epreuves" class="epreuve-item">
-    <div (click)="viewContestPhoto(epreuve.epreuve)">
+    <div class="epreuve-folder" (click)="viewContestPhoto(epreuve.epreuve)">
       <img
-        [src]="'http://localhost:5001/logo/' + epreuve.imgUrl"
+        [src]="'http://localhost:5001/logo' + epreuve.imgUrl"
         [alt]="epreuve.epreuve"
-        width="150"
-        height="150"
       />
       <p>{{ epreuve.epreuve }}</p>
     </div>

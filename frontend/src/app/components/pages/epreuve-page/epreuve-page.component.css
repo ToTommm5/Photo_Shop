@@ -6,49 +6,17 @@ body {
   background-color: #f4f4f9;
   color: #333;
 }
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  border-bottom: 2px solid #ddd;
-}
-.back-button {
-  background-color: white;
-  color: white; /* Couleur du texte */
-  font-size: 40px; /* Taille de la police */
-  margin: 10px;
-  padding: 10px 20px; /* Espacement intérieur */
-  border: solid #333; /* Pas de bordure */
-  border-radius: 5px; /* Coins arrondis */
-  cursor: pointer; /* Curseur au survol */
-  letter-spacing: 1px; /* Espacement entre les lettres */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Animation douce */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
-}
-
-.back-button:hover {
-  background-color: #0056b3; /* Couleur plus foncée au survol */
-  transform: translateY(-2px); /* Légère élévation */
-}
-
-.back-button:active {
-  transform: translateY(0); /* Réinitialisation lors du clic */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre réduite */
-}
 
 /* Heading Style */
-h2 {
-  position: absolute;
-  left: 40%;
+h1 {
   font-size: 2.5rem;
   font-weight: bold;
   color: #444;
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0;
   letter-spacing: 1.5px;
-
-  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd; /* Ajout de la bordure */
+  padding-bottom: 20px; /* Un peu d'espace sous le texte */
 }
 
 /* Photo List */
@@ -90,7 +58,6 @@ img {
 a:hover img {
   transform: scale(1.1);
 }
-
 /* Modal Styles */
 .modal {
   position: fixed;
@@ -216,7 +183,6 @@ a:hover img {
   animation: fadeInOut 4s forwards;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 @keyframes fadeInOut {
   0%,
   80% {
@@ -225,45 +191,4 @@ a:hover img {
   100% {
     opacity: 0;
   }
-}
-
-/* Epreuve Folder Style */
-.epreuve-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.epreuve-folder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 200px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.epreuve-folder:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.epreuve-folder img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-}
-
-.epreuve-folder p {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #444;
-  margin: 0;
 }

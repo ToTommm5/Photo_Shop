@@ -1,17 +1,19 @@
-/* Epreuves */
-
+/* Epreuve Container */
 .epreuve-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px; /* Ajout d'un peu de padding pour que le contenu ne touche pas les bords */
 }
 
+/* Epreuve Folder (Item) */
+/* Epreuve Folder (Item) */
 .epreuve-folder {
   display: flex;
   flex-direction: column; /* Place le texte sous l'image */
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centre l'image et le texte horizontalement */
+  justify-content: center; /* Centre verticalement */
   width: 200px;
   height: 250px;
   border: 2px solid #ccc;
@@ -20,6 +22,7 @@
   cursor: pointer;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px;
 }
 
 .epreuve-folder:hover {
@@ -27,15 +30,21 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Image inside the epreuve folder */
 .epreuve-folder img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 10px; /* Espace entre l'image et le texte */
+  object-fit: contain; /* Garantit que l'image reste dans le cadre sans déformation */
 }
 
+/* Text under the image */
 .epreuve-folder p {
   font-size: 1rem;
   font-weight: bold;
   color: #333;
   margin: 0;
+  word-wrap: break-word;
+  text-align: center;
+  display: block; /* Assure que le p soit traité comme un bloc pour avoir un contrôle total */
 }
